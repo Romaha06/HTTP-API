@@ -20,14 +20,14 @@ public class JiraApiTest {
                 given().
                         auth().preemptive().basic("Roman_Chelombitko", "Roman_Chelombitko").
                         when().
-                        get("http://jira.hillel.it/rest/api/2/issue/WEBINAR-8887").
+                        get("http://jira.hillel.it/rest/api/2/issue/QAAUT8-1385").
                         then().
                         extract().response();
 
         assertEquals(200, response.statusCode());
-        assertEquals("WEBINAR-8887", response.path("key"));
-        final Matcher<String> matcher = new MatchesPattern(Pattern.compile("[A-Z]+\\-[0-9]+"));
-        assertTrue(matcher.matches("WEBINAR-8887"));
+        assertEquals("QAAUT8-1385", response.path("key"));
+        String responseBody = response.then().extract().asString();
+        System.out.printf("\nRESPONSE: " + responseBody);
     }
 
 
@@ -63,6 +63,8 @@ public class JiraApiTest {
                         then().
                         extract().response();
         assertEquals(201, response.statusCode());
+        String responseBodyCreate = response.then().extract().asString();
+        System.out.printf("\nRESPONSE: " + responseBodyCreate);
     }
 
 
@@ -73,7 +75,7 @@ public class JiraApiTest {
                 given().
                         auth().preemptive().basic("Roman_Chelombitko", "Roman_Chelombitko").
                         when().
-                        delete("https://jira.hillel.it/rest/api/2/issue/QAAUT8-1284").
+                        delete("https://jira.hillel.it/rest/api/2/issue/QAAUT8-1385").
                         then().
                         extract().response();
         assertEquals(204, response.statusCode());
