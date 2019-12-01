@@ -10,28 +10,9 @@ public class CreateAndDeleteIssue {
     @Test
     public void createAndDeleteIssue() {
 
-        String credentialsJSON = "{" +
-                "\"username\": \"Roman_Chelombitko\"," +
-                "\"password\": \"Roman_Chelombitko\"" +
-                "} ";
+        String credentialsJSON = JiraJSONObjects.credentialsJSON();
+        String issueJson = JiraJSONObjects.newIssueJSON();
 
-        String issueJson =  "{\n" +
-                "    \"fields\": {\n" +
-                "        \"project\": {\n" +
-                "            \"id\": \"11400\"\n" +
-                "        },\n" +
-                "        \"summary\": \"Test API\",\n" +
-                "        \"issuetype\": {\n" +
-                "            \"name\": \"Bug\"\n" +
-                "        },\n" +
-                "        \"assignee\": {\n" +
-                "            \"name\": \"Roman_Chelombitko\"\n" +
-                "        },\n" +
-                "        \"reporter\": {\n" +
-                "            \"name\": \"Roman_Chelombitko\"\n" +
-                "        }\n" +
-                "    }\n" +
-                "}";
 
 //Authorization
         String sessionId = given().
