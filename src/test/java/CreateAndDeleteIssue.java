@@ -1,3 +1,4 @@
+import json.objects.JiraJSONObjects;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
