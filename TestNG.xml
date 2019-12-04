@@ -1,5 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="JIRA Suite" parallel="false">
+
+    <listeners>
+        <listener class-name="utils.framework.SuiteListener"/>
+    </listeners>
+
     <test name="Issue">
         <groups>
             <run>
@@ -8,7 +13,7 @@
             </run>
         </groups>
         <classes>
-            <class name="JiraApiTest"/>
+            <class name="CreateAndDeleteIssuePOJO"/>
         </classes>
     </test>
 </suite>

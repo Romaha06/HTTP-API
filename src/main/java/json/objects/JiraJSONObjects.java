@@ -1,3 +1,5 @@
+package json.objects;
+
 import com.github.tsohr.JSONObject;
 
 public class JiraJSONObjects {
