@@ -75,7 +75,7 @@ public class JiraApiTest {
                 given().
                         auth().preemptive().basic("Roman_Chelombitko", "Roman_Chelombitko").
                         when().
-                        delete("https://jira.hillel.it/rest/api/2/issue/QAAUT8-1385").
+                        delete("https://jira.hillel.it/rest/api/2/issue/67271").
                         then().
                         extract().response();
         assertEquals(204, response.statusCode());
