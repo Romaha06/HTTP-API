@@ -37,7 +37,7 @@ public class CreateAndDeleteIssue {
                 post("https://jira.hillel.it/rest/api/2/issue").
                 then().
                 extract().response();
-        assertEquals(201, createIssue.statusCode());
+        assertEquals(createIssue.statusCode(), 201);
         System.out.println("Status code:" + createIssue.statusCode());
         String issueId =  createIssue.then().extract().path("id");
         String responseBodyCreate = createIssue.then().extract().asString();
