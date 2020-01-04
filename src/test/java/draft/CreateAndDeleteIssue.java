@@ -1,3 +1,5 @@
+package draft;
+
 import json.objects.JiraJSONObjects;
 import io.restassured.response.Response;
 

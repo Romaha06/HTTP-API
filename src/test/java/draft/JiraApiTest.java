@@ -1,3 +1,5 @@
+package draft;
+
 import io.qameta.allure.Feature;
 import io.restassured.response.Response;
 import org.hamcrest.Matcher;
@@ -80,4 +82,6 @@ public class JiraApiTest {
                         extract().response();
         assertEquals(204, response.statusCode());
     }
+
+
 }
